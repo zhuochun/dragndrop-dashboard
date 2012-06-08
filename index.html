@@ -1,0 +1,279 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Dashboard Practice</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Load StyleSheets -->
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+  <header>
+      <div class="navbar">
+          <div class="navbar-inner">
+              <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </a>
+
+                  <a class="brand" href="#">DASHbOARD</a>
+
+                  <div class="nav-collapse">
+                      <ul class="nav">
+                      </ul>
+
+                      <ul class="nav pull-right">
+                          <li class="divider-vertical"></li>
+                          <!-- Display only icon on Desktop > 750px wide window -->
+                          <li class="visible-desktop"><a href="#" title="Refresh"> <i class="icon-refresh icon-white"></i> </a></li>
+                          <li class="visible-desktop"><a href="#" title="Add Widget"> <i class="icon-th-list icon-white"></i> </a></li>
+                          <li class="visible-desktop"><a href="#" title="Dashboard Settings"> <i class="icon-wrench icon-white"></i> </a></li>
+                          <!-- Display icon + title on Window < 750px wide -->
+                          <li class="hidden-desktop"><a href="#" title="Refresh"><i class="icon-refresh icon-white"></i> Refresh Dashboard</a></li>
+                          <li class="hidden-desktop"><a href="#" title="Add Widget"><i class="icon-th-list icon-white"></i> Add Widget</a></li>
+                          <li class="hidden-desktop"><a href="#" title="Dashboard Settings"><i class="icon-wrench icon-white"></i> Dashboard Setting</a></li>
+
+                          <li class="divider-vertical"></li>
+
+                          <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th-large icon-white"></i> Dashboards <b class="caret"></b></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">New ...</a></li>
+                                  <li><a href="#">Dashboard 1</a></li>
+                                  <li><a href="#">Dashboard 2</a></li>
+                              </ul>
+                          </li>
+
+                          <li class="divider-vertical"></li>
+
+                          <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> Zhuochun <b class="caret"></b></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Profile</a></li>
+                                  <li><a href="#">Settings</a></li>
+                                  <li class="divider"></li>
+                                  <li><a href="#">Log Out</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div><!-- /.nav-collapse -->
+              </div>
+          </div><!-- /navbar-inner -->
+      </div><!-- /navbar -->
+  </header>
+
+  <div id="main" class="container-fluid">
+
+    <div id="dashboard1" class="dashboard-title">
+      <h1>DashBoard - Template Demo</h1>
+    </div>
+
+          <ul id="tab-lists" class="nav nav-tabs">
+            <li class="active"><a href="#pane1" data-toggle="tab">Pane 1|1</a></li>
+            <li><a href="#pane2" data-toggle="tab">Pane 1|2</a></li>
+            <li><a href="#pane3" data-toggle="tab">Pane 1|1|1</a></li>
+            <li class="pull-right"><a href="#"> <i class="icon-plus"></i> </a></li>
+          </ul>
+
+          <div id="pane-contents" class="tab-content">
+            <div class="tab-pane fade in active" id="pane1">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div id="widget1" class="widget widget-color-blue">
+                            <div class="widget-title">
+                                <h3>Widget 1</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 1</p>
+                                <p>Pane 1 Col 1</p>
+                                <p>Pane 1 Col 1</p>
+                            </div>
+                        </div> <!-- widget -->
+
+                        <div id="widget2" class="widget widget-color-red">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 1</p>
+                                <p>Pane 1 Col 1</p>
+                                <p>Pane 1 Col 1</p>
+                                <p>Pane 1 Col 1</p>
+                            </div>
+                        </div> <!-- widget -->
+                    </div>
+                    <div class="span6">
+                        <div id="widget3" class="widget widget-color-yellow">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+
+                        <div id="widget4" class="widget widget-color-white">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pane2">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div id="widget5" class="widget widget-color-orange">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                        <div id="widget6" class="widget widget-color-white">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                    </div>
+                    <div class="span8">
+                        <div id="widget7" class="widget widget-color-green">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                        <div id="widget8" class="widget widget-color-white">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                        <div id="widget9" class="widget widget-color-yellow">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pane3">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div id="widget10" class="widget widget-color-yellow">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                    </div>
+                    <div class="span4">
+                        <div id="widget11" class="widget widget-color-red">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                    </div>
+                    <div class="span4">
+                        <div id="widget12" class="widget widget-color-blue">
+                            <div class="widget-title">
+                                <h3>Widget 2</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                                <p>Pane 1 Col 2</p>
+                            </div>
+                        </div> <!-- widget -->
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div> <!-- Main -->
+
+  <footer>
+
+  </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <!-- load jQuery -->
+  <script src="js/libs/jquery-1.7.1.min.js"></script>
+  <!-- load bootstrap libraries -->
+  <script src="js/libs/bootstrap/bootstrap.min.js"></script>
+  <!-- scripts concatenated and minified via build script -->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <!-- end scripts -->
+
+      <script>
+
+          $(function() {
+              $("#tab-lists a:first").tab("show");
+          });
+
+      </script>
+
+</body>
+</html>
