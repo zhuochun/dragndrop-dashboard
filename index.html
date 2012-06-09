@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Load StyleSheets -->
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-themes/bootstrap-blue.min.css">
   <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -49,9 +49,9 @@
           <ul class="nav pull-right">
             <li class="divider-vertical"></li>
             <!-- Display only icon on Desktop > 750px wide window -->
-            <li class="visible-desktop"><a href="#" title="Refresh"> <i class="icon-refresh icon-white"></i> </a></li>
-            <li class="visible-desktop"><a href="#" title="Add Widget"> <i class="icon-th-list icon-white"></i> </a></li>
-            <li class="visible-desktop"><a href="#" title="Dashboard Settings"> <i class="icon-wrench icon-white"></i> </a></li>
+            <li class="visible-desktop"><a href="#" rel="tooltip" title="Refresh"> <i class="icon-refresh icon-white"></i> </a></li>
+            <li class="visible-desktop"><a href="#" rel="tooltip" title="Add Widget"> <i class="icon-th-list icon-white"></i> </a></li>
+            <li class="visible-desktop"><a href="#" rel="tooltip" title="Dashboard Settings"> <i class="icon-wrench icon-white"></i> </a></li>
             <!-- Display icon + title on Window < 750px wide -->
             <li class="hidden-desktop"><a href="#" title="Refresh"><i class="icon-refresh icon-white"></i> Refresh Dashboard</a></li>
             <li class="hidden-desktop"><a href="#" title="Add Widget"><i class="icon-th-list icon-white"></i> Add Widget</a></li>
@@ -95,7 +95,7 @@
       <li class="active"><a href="#pane1" data-toggle="tab">Pane 1|1</a></li>
       <li><a href="#pane2" data-toggle="tab">Pane 1|2</a></li>
       <li><a href="#pane3" data-toggle="tab">Pane 1|1|1</a></li>
-      <li class="pull-right"><a href="#"> <i class="icon-plus"></i> </a></li>
+      <li class="pull-right"><a href="#" rel="tooltip" title="Add Tab"> <i class="icon-plus"></i> </a></li>
     </ul>
 
     <div id="pane-contents" class="tab-content">
@@ -103,14 +103,13 @@
       <div class="tab-pane fade in active" id="pane1">
         <div class="row-fluid">
           <div class="span6">
-            <div id="widget1" class="widget widget-color-blue">
+            <div id="widget1" class="widget widget-color-purple">
               <div class="widget-title">
                 <h3>Widget 1</h3>
               </div>
               <div class="widget-content">
-                <p>Pane 1 Col 1</p>
-                <p>Pane 1 Col 1</p>
-                <p>Pane 1 Col 1</p>
+                <div id="pie-chart">
+                </div>
               </div>
             </div> <!-- widget -->
 
@@ -140,9 +139,36 @@
               </div>
             </div> <!-- widget -->
 
-            <div id="widget4" class="widget widget-color-white">
+            <div class="row-fluid">
+              <div class="span6">
+                <div id="widget4" class="widget widget-color-white">
+                  <div class="widget-title">
+                    <h3>Widget 2</h3>
+                  </div>
+                  <div class="widget-content">
+                    <p>Pane 1 Col 2</p>
+                    <p>Pane 1 Col 2</p>
+                    <p>Pane 1 Col 2</p>
+                  </div>
+                </div> <!-- widget -->
+              </div>
+              <div class="span6">
+                <div id="widget14" class="widget widget-color-green">
+                  <div class="widget-title">
+                    <h3>Widget 6</h3>
+                  </div>
+                  <div class="widget-content">
+                    <p>Pane 1 Col 2</p>
+                    <p>Pane 1 Col 2</p>
+                    <p>Pane 1 Col 2</p>
+                  </div>
+                </div> <!-- widget -->
+              </div>
+            </div> <!-- ./row-fluid -->
+
+            <div id="widget13" class="widget widget-color-blue">
               <div class="widget-title">
-                <h3>Widget 2</h3>
+                <h3>Widget 1</h3>
               </div>
               <div class="widget-content">
                 <p>Pane 1 Col 2</p>
@@ -260,18 +286,19 @@
   </div> <!-- /Main -->
 
   <footer>
-
+    <h6>DASHbOARD &copy; 2012 by Zhuochun</h6>
   </footer>
 
   <!-- JavaScript at the bottom for fast page loading -->
+  <!-- load Google Chart API -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <!-- load jQuery -->
-  <script src="js/libs/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="js/libs/jquery-1.7.1.min.js"></script>
   <!-- load bootstrap libraries -->
-  <script src="js/libs/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/libs/bootstrap/bootstrap.min.js"></script>
   <!-- scripts concatenated and minified via build script -->
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <!-- end scripts -->
-
 </body>
 </html>

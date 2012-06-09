@@ -18,24 +18,26 @@ body {
 /* Colors for Widgets */
 .widget-color-yellow {background:#f2bc00;}
 .widget-color-red    {background:#dd0000;}
-.widget-color-blue   {background:#148ea4;}
+.widget-color-navy   {background:#148ea4;}
+.widget-color-blue   {background:#2e68ff;}
 .widget-color-white  {background:#dfdfdf;}
 .widget-color-orange {background:#f66e00;}
+.widget-color-purple {background:#aa00af;}
 .widget-color-green  {background:#8dc100;}
-/* title color for light and dark background */
-.widget-color-yellow h3, .widget-color-white h3, .widget-color-green h3 {color:#000;}
-.widget-color-red h3, .widget-color-blue h3, .widget-color-orange h3 {color:#FFF;}
-/* content background for light and dark title */
-.widget-color-yellow .widget-content,
-.widget-color-white .widget-content,
-.widget-color-green .widget-content {
-    background: #fafafa;
-}
-.widget-color-red .widget-content,
-.widget-color-blue .widget-content,
-.widget-color-orange .widget-content {
-    background: #fafafa;
-}
+.widget-color-oliva  {background:#00b479;}
+.widget-color-pink   {background:#ff3785;}
+/* title color for light background */
+.widget-color-yellow h3,
+.widget-color-white h3,
+.widget-color-green h3 {color:#333;}
+/* title color for dark background */
+.widget-color-red h3,
+.widget-color-purple h3,
+.widget-color-oliva h3,
+.widget-color-navy h3,
+.widget-color-blue h3,
+.widget-color-pink h3,
+.widget-color-orange h3 {color:#fff;}
 
 /* widget */
 .widget {
@@ -64,12 +66,19 @@ body {
     background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
     background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
     background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-    
     padding: 8px 6px 2px;
     color: #111;
-
 }
 
+/* footer */
+footer {
+  margin: 20px auto 10px;
+}
+
+footer h6 {
+  text-align: center;
+  color: #ccc;
+}
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
