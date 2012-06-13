@@ -7,6 +7,37 @@
     // enable tooltips
     $("header li.visible-desktop").tooltip({placement:'bottom', selector:"a[rel=tooltip]"});
     $("#tab-lists, #pane-contents").tooltip({selector:"a[rel=tooltip]"})
+    // add jQuery UI Sortable to column widgets
+    $('.column').sortable({
+      connectWith: '.column',
+      cursor: 'move',
+      delay: 100,
+      distance: 5,
+      revert: true,
+      handle: '.widget-title',
+      placeholder: 'widget-placeholder',
+      forcePlaceholderSize: true,
+      opacity: 0.4,
+      tolerance: "pointer",
+      stop: function() {}
+    }).disableSelection();
+    // allow dragging widget to other tabs (make tabs droppable)
+    $('>li[class!="pull-right"]', "#tab-lists").droppable({
+      //accept: ".widget",
+      //activeClass: "tab-drop-active",
+      hoverClass: "tab-drop-hover",
+      drop: function(event, ui) {
+        //var tab = $(this).find("a").attr("href");
+
+        alert("drop");
+
+        //alert("dropped to " + tab);
+      }
+    });
+    $("h1").droppable({
+      hoverClass: "tab-drop-hover",
+      drop: function() { alert("h1 drop"); }
+      });
 })(jQuery);
 
 /* Dashboard Charts */
@@ -30,7 +61,7 @@ function drawChart() {
         ['Zucchini', 1],
         ['Pepperoni', 2]
     ]);
-    var optionsPie = { 'title'  : 'How Much Pizza I Ate Last Night', };
+    var optionsPie = {'title' : 'How Much Pizza I Ate Last Night', forceIFrame : false };
     var chartPie = new google.visualization.PieChart(document.getElementById('pie-chart'));
     chartPie.draw(dataPie, optionsPie);
 
@@ -48,7 +79,8 @@ function drawChart() {
         title: 'Age vs. Weight comparison',
         hAxis: {title: 'Age', minValue: 0, maxValue: 15},
         vAxis: {title: 'Weight', minValue: 0, maxValue: 15},
-        legend: 'none'
+        legend: 'none',
+        forceIFrame : false 
     };
     var chartScatter = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
     chartScatter.draw(dataScatter, optionsScatter);
@@ -68,7 +100,8 @@ function drawChart() {
         vAxis: {title: "Cups"},
         hAxis: {title: "Month"},
         seriesType: "bars",
-        series: {5: {type: "line"}}
+        series: {5: {type: "line"}},
+        forceIFrame : false 
     };
 
     var chartCombo = new google.visualization.ComboChart(document.getElementById('combo-chart'));
@@ -85,7 +118,8 @@ function drawChart() {
 
     var optionsBar = {
         title: 'Company Performance',
-        vAxis: {title: 'Year',  titleTextStyle: {color: 'red'}}
+        vAxis: {title: 'Year',  titleTextStyle: {color: 'red'}},
+        forceIFrame : false 
     };
 
     var chartBar = new google.visualization.BarChart(document.getElementById('bar-chart'));
@@ -110,7 +144,8 @@ function drawChart() {
         title: 'Correlation between life expectancy, fertility rate and population of some world countries (2010)',
         hAxis: {title: 'Life Expectancy'},
         vAxis: {title: 'Fertility Rate'},
-        bubble: {textStyle: {fontSize: 11}}
+        bubble: {textStyle: {fontSize: 11}},
+        forceIFrame : false 
     };
 
     var chartBubble = new google.visualization.BubbleChart(document.getElementById('bubble-chart'));
@@ -128,7 +163,8 @@ function drawChart() {
         width: 400, height: 120,
         redFrom: 90, redTo: 100,
         yellowFrom:75, yellowTo: 90,
-        minorTicks: 5
+        minorTicks: 5,
+        forceIFrame : false 
     };
 
     var chartGauge = new google.visualization.Gauge(document.getElementById('gauge-chart'));
@@ -146,7 +182,8 @@ function drawChart() {
     var optionsStep = {
         title: 'The decline of \'The 39 Steps\'',
         vAxis: {title: 'Accumulated Rating'},
-        isStacked: true
+        isStacked: true,
+        forceIFrame : false 
     };
 
     var chartStep = new google.visualization.SteppedAreaChart(document.getElementById('step-chart'));

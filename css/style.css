@@ -10,10 +10,14 @@ body {
 }
 
 .dashboard-title { 
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
 }
+
+/* Tabs */
+#tab-lists .tab-drop-active { background: #eee; }
+#tab-lists .tab-drop-hover { background: #888; color: #fff; }
 
 /* Colors for Widgets */
 .widget-color-yellow {background:#f2bc00;}
@@ -41,33 +45,38 @@ body {
 
 /* widget */
 .widget {
-    margin: 10px 5px;
-    padding: 5px;
-    border-radius: 4px;
+  margin: 10px 5px;
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .widget .widget-title {
-    color: #000;
-    overflow: hidden;
-    height: 32px;
-    line-height: 32px;
+  color: #000;
+  overflow: hidden;
+  height: 32px;
+  line-height: 32px;
+  cursor: move;
 }
 
 .widget .widget-title h3 {
-    padding: 0 5px;
-    float: left;
+  padding: 0 5px;
+  float: left;
 }
 
 .widget .widget-content {
-    background: rgb(255,255,255);
-    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 6%, rgba(243,243,243,1) 17%, rgba(252,252,252,1) 99%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(6%,rgba(237,237,237,1)), color-stop(17%,rgba(243,243,243,1)), color-stop(99%,rgba(252,252,252,1)));
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-    background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-    padding: 8px 6px 2px;
-    color: #111;
+  background: rgb(255,255,255);
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 6%, rgba(243,243,243,1) 17%, rgba(252,252,252,1) 99%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(6%,rgba(237,237,237,1)), color-stop(17%,rgba(243,243,243,1)), color-stop(99%,rgba(252,252,252,1)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+  background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+  padding: 8px 6px 2px;
+  color: #111;
+}
+
+.widget-placeholder {
+  border: 2px dashed #999;
 }
 
 /* footer */
@@ -81,8 +90,8 @@ footer h6 {
 }
 
 /* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
+Please define your styles before this section.
+========================================================================== */
 
 /* For image replacement */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
@@ -106,9 +115,9 @@ footer h6 {
 .clearfix { *zoom: 1; }
 
 /* ==|== print styles =======================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
+Print styles.
+Inlined to avoid required HTTP connection: h5bp.com/r
+========================================================================== */
 
 @media print {
   * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
