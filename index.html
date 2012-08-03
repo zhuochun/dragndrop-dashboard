@@ -14,9 +14,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Load StyleSheets -->
-  <link rel="stylesheet" href="css/bootstrap-themes/bootstrap-blue.min.css">
-  <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css">
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
@@ -29,10 +29,9 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <header>
-  <div class="navbar">
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-      <div class="container">
+      <div class="container-fluid">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -41,21 +40,26 @@
 
         <a class="brand" href="#">DASHbOARD</a>
 
-        <div class="nav-collapse">
+        <div class="nav-collapse collapse">
           <ul class="nav">
-            <!-- left-side nav list -->
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 1 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Random Menu</a></li>
+                  <li><a href="#">Random Menu</a></li>
+                  <li><a href="#">Random Menu</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Menu 2</a></li>
+              <li><a href="#">Menu 3</a></li>
           </ul>
 
           <ul class="nav pull-right">
+              <li><a href="#top" rel="tooltip" title="Viewing Dashboard - Dashboard 1">Dashboard 1</a></li>
             <li class="divider-vertical"></li>
             <!-- Display only icon on Desktop > 750px wide window -->
-            <li class="visible-desktop"><a href="#" rel="tooltip" title="Refresh"> <i class="icon-refresh icon-white"></i> </a></li>
-            <li class="visible-desktop"><a href="#" rel="tooltip" title="Add Widget"> <i class="icon-th-list icon-white"></i> </a></li>
-            <li class="visible-desktop"><a href="#" rel="tooltip" title="Dashboard Settings"> <i class="icon-wrench icon-white"></i> </a></li>
-            <!-- Display icon + title on Window < 750px wide -->
-            <li class="hidden-desktop"><a href="#" title="Refresh"><i class="icon-refresh icon-white"></i> Refresh Dashboard</a></li>
-            <li class="hidden-desktop"><a href="#" title="Add Widget"><i class="icon-th-list icon-white"></i> Add Widget</a></li>
-            <li class="hidden-desktop"><a href="#" title="Dashboard Settings"><i class="icon-wrench icon-white"></i> Dashboard Setting</a></li>
+            <li><a href="#" rel="tooltip" title="Add Widget"><i class="icon-plus icon-white"></i> Add Widget</a></li>
+            <li><a href="#" rel="tooltip" title="Dashboard Settings"><i class="icon-wrench icon-white"></i> Edit Layout</a></li>
 
             <li class="divider-vertical"></li>
 
@@ -63,7 +67,10 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th-large icon-white"></i> Dashboards <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">New ...</a></li>
-              <li><a href="#">Dashboard 1</a></li>
+              <li><a href="#">Edit "Dashboard 1"</a></li>
+              <li><a href="#">Clone "Dashboard 1"</a></li>
+              <li class="divider"></li>
+              <li class="active"><a href="#">Dashboard 1</a></li>
               <li><a href="#">Dashboard 2</a></li>
             </ul>
             </li>
@@ -84,7 +91,6 @@
       </div>
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
-  </header>
 
   <div id="main" class="container-fluid">
     <div id="current-dashboard" class="dashboard-title">

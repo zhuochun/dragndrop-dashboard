@@ -79,6 +79,36 @@ body {
   border: 2px dashed #999;
 }
 
+/* add-widget modal */
+#add-widget {
+    width: 805px;
+    margin-left: -402px;
+}
+
+/* add-widget > widget-item */
+.widget-item {
+    width: 220px;
+    float: left;
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    border: 1px solid #bbb;
+}
+
+.widget-item img {
+    float: left;
+    width: 100%;
+    height: 80px;
+}
+
+.widget-item-detail h3 {
+    font-size: 15px;
+}
+
+.widget-item-detail p {
+    font-size: 10px;
+}
+
+
 /* footer */
 footer {
   margin: 20px auto 10px;

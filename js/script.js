@@ -85,7 +85,7 @@ function drawChart() {
     var chartScatter = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
     chartScatter.draw(dataScatter, optionsScatter);
 
-    /* combo chart */
+    /* combo chart
     var dataCombo = google.visualization.arrayToDataTable([
         ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
         ['2004/05',  165,      938,         522,             998,           450,      614.6],
@@ -115,13 +115,11 @@ function drawChart() {
         ['2006',  660,       1120],
         ['2007',  1030,      540]
     ]);
-
     var optionsBar = {
         title: 'Company Performance',
         vAxis: {title: 'Year',  titleTextStyle: {color: 'red'}},
         forceIFrame : false 
     };
-
     var chartBar = new google.visualization.BarChart(document.getElementById('bar-chart'));
     chartBar.draw(dataBar, optionsBar);
 
@@ -151,7 +149,7 @@ function drawChart() {
     var chartBubble = new google.visualization.BubbleChart(document.getElementById('bubble-chart'));
     chartBubble.draw(dataBubble, optionsBubble);
 
-    /* gauge */
+    /* gauge
     var dataGauge = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
         ['Memory', 80],
