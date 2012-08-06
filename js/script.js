@@ -1,43 +1,52 @@
 /*
- * Author: Wang Zhuochun
- * Last Edit: 09/Jun/2012 06:21 PM
- */
+* Author: Wang Zhuochun
+* Last Edit: 09/Jun/2012 06:21 PM
+*/
 
 (function($) {
     // enable tooltips
-    $("header li.visible-desktop").tooltip({placement:'bottom', selector:"a[rel=tooltip]"});
-    $("#tab-lists, #pane-contents").tooltip({selector:"a[rel=tooltip]"})
-    // add jQuery UI Sortable to column widgets
-    $('.column').sortable({
-      connectWith: '.column',
-      cursor: 'move',
-      delay: 100,
-      distance: 5,
-      revert: true,
-      handle: '.widget-title',
-      placeholder: 'widget-placeholder',
-      forcePlaceholderSize: true,
-      opacity: 0.4,
-      tolerance: "pointer",
-      stop: function() {}
-    }).disableSelection();
-    // allow dragging widget to other tabs (make tabs droppable)
-    $('>li[class!="pull-right"]', "#tab-lists").droppable({
-      //accept: ".widget",
-      //activeClass: "tab-drop-active",
-      hoverClass: "tab-drop-hover",
-      drop: function(event, ui) {
-        //var tab = $(this).find("a").attr("href");
+    $(".widget-control").tooltip({selector:"i"});
 
-        alert("drop");
+    // add column widget drag and drop
+    $(".column").DragDrop();
+    // add widget controls
+    $(".widget").Widget();
 
-        //alert("dropped to " + tab);
-      }
+    // listen to add widget
+    $("#column-1").on("widget:add", function(e, prop) {
+        console.log(JSON.stringify(prop));
+
+        var newWidget = $("<div>").attr("id", prop.id).addClass("widget");
+        // widget title
+        $("<div>").attr("class", "widget-title").html("<h3>" + prop.title + "</h3>").appendTo(newWidget);
+        // widget content
+        $("<div>").attr("class", "widget-content").html("<div style='height:50px'></div>").appendTo(newWidget);
+        // add newWidget
+        $(this).prepend(newWidget);
     });
-    $("h1").droppable({
-      hoverClass: "tab-drop-hover",
-      drop: function() { alert("h1 drop"); }
-      });
+
+    // bind widget-add
+    $("#add-widget").find(".btn").on("click", function() {
+        var
+          $this = $(this).closest(".widget-item")
+        , properties = {
+            id : $this.attr("id")
+          , title : $this.find("h3").text()
+        };
+
+        $("#column-1").trigger("widget:add", [properties]);
+    });
+
+    // window resize
+    $(window).resize(function() {
+        var
+          title = $(".widget-title")
+        , h3 = title.find("h3")
+        , btns = title.find(".widget-control");
+
+        h3.width(title.width() - btns.width() - 35);
+    }).resize();
+
 })(jQuery);
 
 /* Dashboard Charts */
@@ -87,21 +96,21 @@ function drawChart() {
 
     /* combo chart
     var dataCombo = google.visualization.arrayToDataTable([
-        ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
-        ['2004/05',  165,      938,         522,             998,           450,      614.6],
-        ['2005/06',  135,      1120,        599,             1268,          288,      682],
-        ['2006/07',  157,      1167,        587,             807,           397,      623],
-        ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-        ['2008/09',  136,      691,         629,             1026,          366,      569.6]
+    ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+    ['2004/05',  165,      938,         522,             998,           450,      614.6],
+    ['2005/06',  135,      1120,        599,             1268,          288,      682],
+    ['2006/07',  157,      1167,        587,             807,           397,      623],
+    ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+    ['2008/09',  136,      691,         629,             1026,          366,      569.6]
     ]);
 
     var optionsCombo = {
-        title : 'Monthly Coffee Production by Country',
-        vAxis: {title: "Cups"},
-        hAxis: {title: "Month"},
-        seriesType: "bars",
-        series: {5: {type: "line"}},
-        forceIFrame : false 
+    title : 'Monthly Coffee Production by Country',
+    vAxis: {title: "Cups"},
+    hAxis: {title: "Month"},
+    seriesType: "bars",
+    series: {5: {type: "line"}},
+    forceIFrame : false 
     };
 
     var chartCombo = new google.visualization.ComboChart(document.getElementById('combo-chart'));
@@ -151,18 +160,18 @@ function drawChart() {
 
     /* gauge
     var dataGauge = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['Memory', 80],
-        ['CPU', 55],
-        ['Network', 68]
+    ['Label', 'Value'],
+    ['Memory', 80],
+    ['CPU', 55],
+    ['Network', 68]
     ]);
 
     var optionsGauge = {
-        width: 400, height: 120,
-        redFrom: 90, redTo: 100,
-        yellowFrom:75, yellowTo: 90,
-        minorTicks: 5,
-        forceIFrame : false 
+    width: 400, height: 120,
+    redFrom: 90, redTo: 100,
+    yellowFrom:75, yellowTo: 90,
+    minorTicks: 5,
+    forceIFrame : false 
     };
 
     var chartGauge = new google.visualization.Gauge(document.getElementById('gauge-chart'));

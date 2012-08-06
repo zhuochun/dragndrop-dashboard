@@ -7,17 +7,31 @@
 /* Dashboard General Settings */
 body {
     padding-top: 60px;
+    overflow-y: scroll;
 }
 
 .dashboard-title { 
-  width: 100%;
-  text-align: center;
-  margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 /* Tabs */
 #tab-lists .tab-drop-active { background: #eee; }
 #tab-lists .tab-drop-hover { background: #888; color: #fff; }
+
+/* Columns */
+.column {
+    padding-bottom: 30px;
+}
+
+/* widget */
+.widget {
+    margin: 10px 5px;
+    padding: 5px;
+    border-radius: 4px;
+    background: #2C2C2C;
+}
 
 /* Colors for Widgets */
 .widget-color-yellow {background:#f2bc00;}
@@ -33,7 +47,9 @@ body {
 /* title color for light background */
 .widget-color-yellow h3,
 .widget-color-white h3,
-.widget-color-green h3 {color:#333;}
+.widget-color-green h3 {
+    color:#333;
+}
 /* title color for dark background */
 .widget-color-red h3,
 .widget-color-purple h3,
@@ -41,42 +57,79 @@ body {
 .widget-color-navy h3,
 .widget-color-blue h3,
 .widget-color-pink h3,
-.widget-color-orange h3 {color:#fff;}
+.widget-color-orange h3 {
+    color:#fff;
+}
 
-/* widget */
-.widget {
-  margin: 10px 5px;
-  padding: 5px;
-  border-radius: 4px;
+.widget-color-yellow i,
+.widget-color-white i,
+.widget-color-green i {
+    /* default background */
+}
+.widget i,
+.widget-color-red i,
+.widget-color-purple i,
+.widget-color-oliva i,
+.widget-color-navy i,
+.widget-color-blue i,
+.widget-color-pink i,
+.widget-color-orange i {
+    background-image: url("img/glyphicons-halflings-white.png");
 }
 
 .widget .widget-title {
-  color: #000;
-  overflow: hidden;
-  height: 32px;
-  line-height: 32px;
-  cursor: move;
+    color: #000;
+    overflow: hidden;
+    height: 32px;
+    line-height: 32px;
 }
 
 .widget .widget-title h3 {
-  padding: 0 5px;
-  float: left;
+    padding: 0 5px;
+    float: left;
+    cursor: move;
+    color: #fff;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.widget .widget-control {
+    float: right;
+}
+
+.widget .widget-control li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.widget-panel {
+    display: none;
+}
+
+.widget-panel-active {
+    display: block;
 }
 
 .widget .widget-content {
-  background: rgb(255,255,255);
-  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 6%, rgba(243,243,243,1) 17%, rgba(252,252,252,1) 99%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(6%,rgba(237,237,237,1)), color-stop(17%,rgba(243,243,243,1)), color-stop(99%,rgba(252,252,252,1)));
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-  background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-  padding: 8px 6px 2px;
-  color: #111;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 6%, rgba(243,243,243,1) 17%, rgba(252,252,252,1) 99%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(6%,rgba(237,237,237,1)), color-stop(17%,rgba(243,243,243,1)), color-stop(99%,rgba(252,252,252,1)));
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+    background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+    padding: 8px 6px 2px;
+    color: #111;
 }
 
 .widget-placeholder {
-  border: 2px dashed #999;
+    border: 2px dashed #999;
 }
 
 /* add-widget modal */
@@ -111,12 +164,12 @@ body {
 
 /* footer */
 footer {
-  margin: 20px auto 10px;
+    margin: 10px auto;
 }
 
 footer h6 {
-  text-align: center;
-  color: #ccc;
+    text-align: center;
+    color: #ccc;
 }
 
 /* ==|== non-semantic helper classes ========================================
@@ -150,16 +203,16 @@ Inlined to avoid required HTTP connection: h5bp.com/r
 ========================================================================== */
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+    * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+    a, a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead { display: table-header-group; } /* h5bp.com/t */
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    p, h2, h3 { orphans: 3; widows: 3; }
+    h2, h3 { page-break-after: avoid; }
 }

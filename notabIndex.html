@@ -104,6 +104,14 @@
             <div id="widget1" class="widget widget-color-purple">
                 <div class="widget-title">
                     <h3>Widget 1</h3>
+                    <div class="widget-control">
+                        <ul class="unstyled">
+                            <li class="widget-refresh"><i class="icon-refresh" title="Refresh"></i></li>
+                            <li class="widget-setting"><i class="icon-wrench" title="Setting"></i></li>
+                            <li class="widget-fold"><i class="icon-resize-small" title="Minimize"></i></li>
+                            <li class="widget-remove"><i class="icon-remove" title="Remove"></i></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="widget-content">
                     <div id="pie-chart">
@@ -114,6 +122,14 @@
             <div id="widget2" class="widget widget-color-red">
                 <div class="widget-title">
                     <h3>Widget 2</h3>
+                    <div class="widget-control">
+                        <ul class="unstyled">
+                            <li class="widget-refresh"><i class="icon-refresh"></i></li>
+                            <li class="widget-setting"><i class="icon-wrench"></i></li>
+                            <li class="widget-fold widget-fold-up"><i class="icon-resize-small"></i></li>
+                            <li class="widget-remove"><i class="icon-remove"></i></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="widget-content">
                     <div id="bar-chart">
@@ -124,6 +140,14 @@
             <div id="widget14" class="widget widget-color-green">
                 <div class="widget-title">
                     <h3>Widget 6</h3>
+                    <div class="widget-control">
+                        <ul class="unstyled">
+                            <li class="widget-refresh"><i class="icon-refresh"></i></li>
+                            <li class="widget-setting"><i class="icon-wrench"></i></li>
+                            <li class="widget-fold widget-fold-up"><i class="icon-resize-small"></i></li>
+                            <li class="widget-remove"><i class="icon-remove"></i></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="widget-content">
                     <div id="step-chart">
@@ -136,16 +160,47 @@
             <div id="widget3" class="widget widget-color-yellow">
                 <div class="widget-title">
                     <h3>Widget 2</h3>
-                </div>
-                <div class="widget-content">
-                    <div id="scatter-chart">
+                    <div class="widget-control">
+                        <ul class="unstyled">
+                            <li class="widget-refresh"><i class="icon-refresh"></i></li>
+                            <li class="widget-setting"><i class="icon-wrench"></i></li>
+                            <li class="widget-fold"><i class="icon-resize-small"></i></li>
+                            <li class="widget-remove"><i class="icon-remove"></i></li>
+                        </ul>
                     </div>
-                </div>
+                </div> <!-- ./widget-title -->
+                <div class="widget-content">
+                    <div class="widget-panel widget-panel-default widget-panel-active">
+                        <div id="scatter-chart">
+                        </div>
+                    </div> <!-- ./.widget-panel-default -->
+                    <div class="widget-panel widget-panel-setting">
+                        <form action="a" method="get" accept-charset="utf-8">
+                            <label for="widget3-title">Widget Title</label>
+                            <input id="widget3-title" type="text" placeholder="Widget Title" />
+                            <label for="widget3-Something">Widget Something</label>
+                            <input id="widget3-Something" type="text" placeholder="Widget Something" />
+
+                            <div class="form-action">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button class="btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div> <!-- ./.widget-panel-setting -->
+                </div> <!-- ./widget-content -->
             </div> <!-- widget -->
 
             <div id="widget13" class="widget widget-color-blue">
                 <div class="widget-title">
-                    <h3>Widget 1</h3>
+                    <h3><i class="icon-move"></i> Widget 1</h3>
+                    <div class="widget-control">
+                        <ul class="unstyled">
+                            <li class="widget-refresh"><i class="icon-refresh"></i></li>
+                            <li class="widget-setting"><i class="icon-wrench"></i></li>
+                            <li class="widget-fold widget-fold-up"><i class="icon-resize-small"></i></li>
+                            <li class="widget-remove"><i class="icon-remove"></i></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="widget-content">
                     <div id="bubble-chart">
@@ -161,7 +216,8 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">×</button>
         <h3>Widget Directory</h3>
-    </div>
+    </div> <!-- ./.modal-header -->
+
     <div class="modal-body clearfix">
 
         <div class="widget-item" id="add-pie-chart">
@@ -171,7 +227,7 @@
                 <p class="widget-item-description">Pie Chart is a Pie Chart.</p>
             </div>
             <div class="widget-item-action"><button class="btn">Add Widget</button></div>
-        </div>
+        </div> <!-- ../.widget-item -->
 
         <div class="widget-item" id="add-bar-chart">
             <img src="img/bar-chart.png" alt="bar chart" />
@@ -181,52 +237,52 @@
             </div>
             <div class="widget-item-action"><button class="btn">Add Widget</button></div>
         </div>
+        <div class="widget-item" id="add-random-chart-0">
+            <img src="img/chart-2.png" alt="bar chart" />
+            <div class="widget-item-detail">
+                <h3>Random Chart 0</h3>
+                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+            </div>
+            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
+        </div>
+        <div class="widget-item" id="add-random-chart">
+            <img src="img/chart-2.png" alt="bar chart" />
+            <div class="widget-item-detail">
+                <h3>Random Chart 1</h3>
+                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+            </div>
+            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
+        </div>
+        <div class="widget-item" id="add-random-chart-1">
+            <img src="img/chart-2.png" alt="bar chart" />
+            <div class="widget-item-detail">
+                <h3>Random Chart 2</h3>
+                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+            </div>
+            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
+        </div>
+        <div class="widget-item" id="add-random-chart-2">
+            <img src="img/chart-2.png" alt="bar chart" />
+            <div class="widget-item-detail">
+                <h3>Random Chart 2</h3>
+                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+            </div>
+            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
+        </div>
+        <div class="widget-item" id="add-random-chart-3">
+            <img src="img/chart-2.png" alt="bar chart" />
+            <div class="widget-item-detail">
+                <h3>Random Chart 3</h3>
+                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+            </div>
+            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
+        </div>
 
-        <div class="widget-item" id="add-random-chart">
-            <img src="img/chart-2.png" alt="bar chart" />
-            <div class="widget-item-detail">
-                <h3>Random Chart</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
-            </div>
-            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
-        </div>
-        <div class="widget-item" id="add-random-chart">
-            <img src="img/chart-2.png" alt="bar chart" />
-            <div class="widget-item-detail">
-                <h3>Random Chart</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
-            </div>
-            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
-        </div>
-        <div class="widget-item" id="add-random-chart">
-            <img src="img/chart-2.png" alt="bar chart" />
-            <div class="widget-item-detail">
-                <h3>Random Chart</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
-            </div>
-            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
-        </div>
-        <div class="widget-item" id="add-random-chart">
-            <img src="img/chart-2.png" alt="bar chart" />
-            <div class="widget-item-detail">
-                <h3>Random Chart</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
-            </div>
-            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
-        </div>
-        <div class="widget-item" id="add-random-chart">
-            <img src="img/chart-2.png" alt="bar chart" />
-            <div class="widget-item-detail">
-                <h3>Random Chart</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
-            </div>
-            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
-        </div>
+    </div> <!-- ./.modal-body -->
 
-    </div>
     <div class="modal-footer">
         <a href="#" class="btn btn-primary" data-dismiss="modal">Finished</a>
-    </div>
+    </div> <!-- ./.modal-footer -->
 </div> <!-- /add-widget -->
 
 <div id="edit-dashboard" class="modal hide fade">
@@ -256,6 +312,9 @@
 <script type="text/javascript" src="js/libs/jquery-ui-1.8.21.custom.min.js"></script>
 <!-- load bootstrap libraries -->
 <script type="text/javascript" src="js/libs/bootstrap/bootstrap.min.js"></script>
+<!-- load CMD jQuery plugins -->
+<script type="text/javascript" src="js/jquery.widget.js"></script>
+<script type="text/javascript" src="js/jquery.dragdrop.js"></script>
 <!-- scripts concatenated and minified via build script -->
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
