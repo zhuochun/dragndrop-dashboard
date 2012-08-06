@@ -55,6 +55,10 @@ body {
     user-select: none;
 }
 
+.widget .widget-title i {
+    background-image: url("img/glyphicons-halflings-white.png");
+}
+
 .widget .widget-control {
     float: right;
 }
@@ -89,49 +93,41 @@ body {
     border: 2px dashed #999;
 }
 
+/* widget panel setting */
+
+.widget-colors li {
+    display: inline-block;
+    margin-right: 5px;
+    border: 2px solid #fff;
+}
+
+.widget-colors li:hover {
+    border: 2px solid #bbb;
+}
+
+.widget-colors li.selected {
+    border: 2px solid #333;
+}
+
+/* Select Widget Color */
+.widget-colors span {
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+
+
 /* Colors for Widgets */
-.widget-color-yellow {background:#f2bc00;}
+.widget-color-default {background: #2C2C2C;}
+.widget-color-yellow {background:#C67F0D;}
 .widget-color-red    {background:#dd0000;}
 .widget-color-navy   {background:#148ea4;}
 .widget-color-blue   {background:#2e68ff;}
-.widget-color-white  {background:#dfdfdf;}
 .widget-color-orange {background:#f66e00;}
 .widget-color-purple {background:#aa00af;}
 .widget-color-green  {background:#8dc100;}
 .widget-color-oliva  {background:#00b479;}
 .widget-color-pink   {background:#ff3785;}
-/* title color for light background */
-.widget-color-yellow h3,
-.widget-color-white h3,
-.widget-color-green h3 {
-    color:#333;
-}
-/* title color for dark background */
-.widget-color-red h3,
-.widget-color-purple h3,
-.widget-color-oliva h3,
-.widget-color-navy h3,
-.widget-color-blue h3,
-.widget-color-pink h3,
-.widget-color-orange h3 {
-    color:#fff;
-}
-
-.widget-color-yellow i,
-.widget-color-white i,
-.widget-color-green i {
-    /* default background */
-}
-.widget i,
-.widget-color-red i,
-.widget-color-purple i,
-.widget-color-oliva i,
-.widget-color-navy i,
-.widget-color-blue i,
-.widget-color-pink i,
-.widget-color-orange i {
-    background-image: url("img/glyphicons-halflings-white.png");
-}
 
 /* ========================================
  * Add Widget Modal
@@ -155,9 +151,9 @@ body {
     display: inline-block;
     padding: 10px;
     width: 16%;
-    min-width: 200px;
+    min-width: 130px;
     height: 200px;
-    margin: 0 0 10px 2%;
+    margin: 0 0 10px 1%;
     border: 1px solid #bbb;
 
     -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.2);
@@ -167,6 +163,10 @@ body {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
+}
+
+#add-widget .widget-item:hover {
+    background: #D1D1D1;
 }
 
 #add-widget .widget-item-img {
