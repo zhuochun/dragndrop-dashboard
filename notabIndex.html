@@ -221,59 +221,56 @@
     <div class="modal-body clearfix">
 
         <div class="widget-item" id="add-pie-chart">
-            <img src="img/pie-chart.png" alt="pie chart" />
+            <div class="widget-item-img">
+                <img src="img/pie-chart.png" alt="pie chart" />
+            </div>
             <div class="widget-item-detail">
                 <h3>Pie Chart</h3>
                 <p class="widget-item-description">Pie Chart is a Pie Chart.</p>
             </div>
-            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
+            <div class="widget-item-action"><button class="btn btn-primary">Add Widget</button></div>
         </div> <!-- ../.widget-item -->
 
         <div class="widget-item" id="add-bar-chart">
-            <img src="img/bar-chart.png" alt="bar chart" />
+            <div class="widget-item-img">
+                <img src="img/bar-chart.png" alt="bar chart" />
+            </div>
             <div class="widget-item-detail">
                 <h3>Bar Chart</h3>
                 <p class="widget-item-description">Bar Chart is not a Pie Chart.</p>
             </div>
             <div class="widget-item-action"><button class="btn">Add Widget</button></div>
         </div>
+
         <div class="widget-item" id="add-random-chart-0">
-            <img src="img/chart-2.png" alt="bar chart" />
+            <div class="widget-item-img">
+                <img src="img/chart-2.png" alt="bar chart" />
+            </div>
             <div class="widget-item-detail">
                 <h3>Random Chart 0</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+                <p class="widget-item-description">Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo.</p>
             </div>
             <div class="widget-item-action"><button class="btn">Add Widget</button></div>
         </div>
-        <div class="widget-item" id="add-random-chart">
-            <img src="img/chart-2.png" alt="bar chart" />
+
+        <div class="widget-item" id="add-random-chart-0">
+            <div class="widget-item-img">
+                <img src="img/chart-2.png" alt="bar chart" />
+            </div>
             <div class="widget-item-detail">
-                <h3>Random Chart 1</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+                <h3>Random Chart 0 Chart has long title</h3>
+                <p class="widget-item-description">Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo.</p>
             </div>
             <div class="widget-item-action"><button class="btn">Add Widget</button></div>
         </div>
-        <div class="widget-item" id="add-random-chart-1">
-            <img src="img/chart-2.png" alt="bar chart" />
-            <div class="widget-item-detail">
-                <h3>Random Chart 2</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+
+        <div class="widget-item" id="add-random-chart-0">
+            <div class="widget-item-img">
+                <img src="img/chart-2.png" alt="bar chart" />
             </div>
-            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
-        </div>
-        <div class="widget-item" id="add-random-chart-2">
-            <img src="img/chart-2.png" alt="bar chart" />
             <div class="widget-item-detail">
-                <h3>Random Chart 2</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
-            </div>
-            <div class="widget-item-action"><button class="btn">Add Widget</button></div>
-        </div>
-        <div class="widget-item" id="add-random-chart-3">
-            <img src="img/chart-2.png" alt="bar chart" />
-            <div class="widget-item-detail">
-                <h3>Random Chart 3</h3>
-                <p class="widget-item-description">Random Chart is a Chart just for demo.</p>
+                <h3>Random Chart 0</h3>
+                <p class="widget-item-description">Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo. Random Chart is a Chart just for demo.</p>
             </div>
             <div class="widget-item-action"><button class="btn">Add Widget</button></div>
         </div>
@@ -281,7 +278,7 @@
     </div> <!-- ./.modal-body -->
 
     <div class="modal-footer">
-        <a href="#" class="btn btn-primary" data-dismiss="modal">Finished</a>
+        <a href="#" class="btn btn-success btn-large" data-dismiss="modal">Finished</a>
     </div> <!-- ./.modal-footer -->
 </div> <!-- /add-widget -->
 
@@ -290,14 +287,37 @@
         <button type="button" class="close" data-dismiss="modal">×</button>
         <h3>Dashboard Setting</h3>
     </div>
+    <form class="form-horizontal">
+    <fieldset>
     <div class="modal-body">
-        <p>Title : </p>
-        <p>Layout : </p>
-        <p>Description : </p>
+        <div class="control-group">
+            <label class="control-label" for="edit-dashboard-name">Name</label>
+            <div class="controls">
+                <input class="input-xlarge focused" id="edit-dashboard-title" type="text" value="Dashboard 1" placeholder="My Dashboard" required>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="edit-dashboard-description">Description</label>
+            <div class="controls">
+                <textarea class="input-xlarge" id="edit-dashboard-description" cols="3" placeholder="a Short Description"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="edit-style">Layout</label>
+            <div class="controls">
+                <select id="selectError">
+                    <option>2 Columns</option>
+                    <option>3 Columns</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="modal-footer">
-        <a href="#" class="btn btn-primary" data-dismiss="modal">Save Changes</a>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+        <button class="btn" data-dismiss="modal">Cancel</button>
     </div>
+    </fieldset>
+    </form>
 </div> <!-- /edit-dashboard -->
 
 <footer>
