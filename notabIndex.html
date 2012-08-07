@@ -54,10 +54,12 @@
 
               <ul class="nav pull-right">
                   <li class="dropdown">
-                  <a href="#top" class="dropdown-toggle" data-toggle="dropdown">Dashboard 1  <b class="caret"></b></a>
+                  <a href="#top" class="dropdown-toggle" data-toggle="dropdown">
+                      <span id="dashboard-title">Dashboard 1</span> <b class="caret"></b>
+                  </a>
                   <ul class="dropdown-menu">
                       <li><a href="#edit-dashboard" data-toggle="modal"><i class="icon-wrench"></i> Edit ...</a></li>
-                      <li><a href="#"><i class="icon-file"></i> Copy ...</a></li>
+                      <li><a href="#"><i class="icon-file"></i> Duplicate ...</a></li>
                       <li class="divider"></li>
                       <li><a href="#"><i class="icon-remove"></i> Delete ...</a></li>
                   </ul>
@@ -99,8 +101,7 @@
 
 <div id="main" class="container-fluid">
     <div class="row-fluid">
-
-        <div class="span6 column" id="column-1" data-span="6">
+        <div class="span6 column" id="column-1">
             <div id="widget1" class="widget widget-color-purple">
                 <div class="widget-title">
                     <h3>Widget 1</h3>
@@ -226,7 +227,7 @@
             </div> <!-- widget -->
         </div>
 
-        <div class="span6 column" id="column-2" data-span="6">
+        <div class="span6 column" id="column-2">
             <div id="widget3" class="widget widget-color-yellow">
                 <div class="widget-title">
                     <h3>Widget 2</h3>
@@ -279,7 +280,6 @@
             </div> <!-- widget -->
         </div>
     </div> <!-- ./row-fluid -->
-
 </div> <!-- /Main -->
 
 <div id="add-widget" class="modal hide fade">
@@ -289,7 +289,6 @@
     </div> <!-- ./.modal-header -->
 
     <div class="modal-body clearfix">
-
         <div class="widget-item" id="add-pie-chart">
             <div class="widget-item-img">
                 <img src="img/pie-chart.png" alt="pie chart" />
@@ -344,7 +343,6 @@
             </div>
             <div class="widget-item-action"><button class="btn">Add Widget</button></div>
         </div>
-
     </div> <!-- ./.modal-body -->
 
     <div class="modal-footer">
@@ -373,18 +371,19 @@
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="edit-style">Layout</label>
+            <label class="control-label" for="edit-dashboard-layout">Layout</label>
             <div class="controls">
-                <select id="selectError">
-                    <option>2 Columns</option>
+                <select id="edit-dashboard-layout">
+                    <option>1 Columns</option>
+                    <option selected>2 Columns</option>
                     <option>3 Columns</option>
                 </select>
             </div>
         </div>
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-        <button class="btn" data-dismiss="modal">Cancel</button>
+        <button id="edit-dashboard-submit" class="btn btn-primary" data-dismiss="modal" type="submit">Save changes</button>
+        <button id="edit-dashboard-cancel" class="btn" data-dismiss="modal">Cancel</button>
     </div>
     </fieldset>
     </form>

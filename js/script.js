@@ -16,6 +16,8 @@
     $("#column-1").on("widget:add", function(e, prop) {
         console.log(JSON.stringify(prop));
 
+        // TODO convert it handlerbars template
+
         var newWidget = $("<div>").attr("id", prop.id).addClass("widget");
         // widget title
         $("<div>").attr("class", "widget-title").html("<h3>" + prop.title + "</h3>").appendTo(newWidget);
@@ -28,14 +30,75 @@
     // bind widget-add
     $("#add-widget").find(".btn").on("click", function() {
         var
-          $this = $(this).closest(".widget-item")
+          $this = $(this)
+          $item = $this.closest(".widget-item")
         , properties = {
-            id : $this.attr("id")
-          , title : $this.find("h3").text()
+            id : $item.attr("id")
+          , title : $item.find("h3").text()
         };
 
         $("#column-1").trigger("widget:add", [properties]);
+
+        // TODO ajax post to server
+
+        $this.removeClass("btn-primary").addClass("btn-success").text("Added Successfully!");
+
+        setTimeout(function() {
+            $this.removeClass("btn-success").addClass("btn-primary").text("Add Widget");
+        }, 2000);
     });
+
+    // TODO separate it to individual js file
+    // bind column change
+    var layout = 2; // TODO make this fleasible
+    // under $("#edit-dashboard")
+    $("#edit-dashboard-submit").on("click", function(e) {
+        // TODO validate data
+
+        var
+          i, col, curCol, div
+        , newLayout = parseInt($("#edit-dashboard-layout").val().split(" ")[0], 10)
+        , $this = $("#main").find(".row-fluid")
+        , oldSpan = 12 / layout
+        , span = 12 / newLayout;
+
+        // UPDATE DASHBOARD TITLE
+        var newTitle = $("#edit-dashboard-title").val()
+        $("#dashboard-title").text(newTitle);
+
+        // UPDATE LAYOUT
+        if (newLayout > layout) { // increase columns
+            $this.find("div[id^=column-]").removeClass("span" + oldSpan).addClass("span" + span);
+
+            for (i = layout; i < newLayout; i++) {
+                div = $("<div>").addClass("column span" + span)
+                        .attr("id", "column-" + (i+1));
+                div.appendTo($this);
+                div.DragDrop();
+            }
+
+            $(window).resize();
+        } else if (newLayout < layout) { // reduce columns
+            // move all widgets in reduced columns to the lowest column
+            col = $this.find("#column-" + newLayout);
+
+            for (i = newLayout + 1; i <= layout; i++) {
+                curCol = $this.find("#column-" + i);
+
+                curCol.find(".widget").each(function() {
+                        $(this).detach().appendTo(col);
+                }).end().remove();
+            }
+
+            $this.find("div[id^=column-]").removeClass("span" + oldSpan).addClass("span" + span);
+        }
+
+        layout = newLayout;
+
+        // TODO do form submission
+        return true;
+    });
+
 
     // window resize
     $(window).resize(function() {
