@@ -1,92 +1,225 @@
 /*
- * Based on HTML5 Boiler Plate
- * Wang Zhuochun
- * 
+ * Drag-n-Drop Dashboard StyleSheets
+ *
+ * Author: Wang Zhuochun
+ * Last Edit: 16/Sep/2012 06:49 PM
  */
 
-/* Dashboard General Settings */
+/* ========================================
+ * Dashboard General Settings 
+ * ======================================== */
+
 body {
     padding-top: 60px;
+    overflow-y: scroll;
 }
 
-.dashboard-title { 
-  width: 100%;
-  text-align: center;
-  margin-bottom: 10px;
+.column {
+    padding: 10px 0 30px;
 }
 
-/* Tabs */
-#tab-lists .tab-drop-active { background: #eee; }
-#tab-lists .tab-drop-hover { background: #888; color: #fff; }
+/* ========================================
+ * Individual Widget
+ * ======================================== */
+
+/* widget */
+.widget {
+    margin: 0 5px 15px;
+    padding: 5px;
+    border-radius: 4px;
+    background: #2C2C2C;
+
+    -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.4);
+    -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.4);
+    box-shadow: 1px 2px 5px rgba(0,0,0,.4);
+}
+
+.widget-title {
+    color: #000;
+    overflow: hidden;
+    height: 32px;
+    line-height: 32px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.widget-title h3 {
+    padding: 0 5px;
+    float: left;
+    cursor: move;
+    color: #fff;
+}
+
+.widget-title i {
+    background-image: url("images/glyphicons-halflings-white.png");
+}
+
+.widget-control {
+    float: right;
+}
+
+.widget-control li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.widget-content {
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 6%, rgba(243,243,243,1) 17%, rgba(252,252,252,1) 99%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(6%,rgba(237,237,237,1)), color-stop(17%,rgba(243,243,243,1)), color-stop(99%,rgba(252,252,252,1)));
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+    background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
+
+    -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.4) inset;
+    -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.4) inset;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.4) inset;
+
+    padding: 8px 6px 2px;
+    color: #111;
+}
+
+.widget-panel {
+    display: none;
+}
+
+.widget-panel-active {
+    display: block;
+}
+
+.widget-panel .form-actions {
+    background: #fff;
+    padding-bottom: 0px;
+}
+
+.widget-panel-setting {
+    padding-top: 20px;
+}
+
+.widget-placeholder {
+    border: 2px dashed #999;
+}
+
+/* widget panel setting */
+
+.widget-colors li {
+    display: inline-block;
+    margin-right: 5px;
+    border: 2px solid #fff;
+}
+
+.widget-colors li:hover {
+    border: 2px solid #bbb;
+}
+
+.widget-colors li.selected {
+    border: 2px solid #333;
+}
+
+/* Select Widget Color */
+.widget-colors span {
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+
 
 /* Colors for Widgets */
-.widget-color-yellow {background:#f2bc00;}
+.widget-color-default {background: #2C2C2C;}
+.widget-color-yellow {background:#C67F0D;}
 .widget-color-red    {background:#dd0000;}
 .widget-color-navy   {background:#148ea4;}
 .widget-color-blue   {background:#2e68ff;}
-.widget-color-white  {background:#dfdfdf;}
 .widget-color-orange {background:#f66e00;}
 .widget-color-purple {background:#aa00af;}
 .widget-color-green  {background:#8dc100;}
 .widget-color-oliva  {background:#00b479;}
 .widget-color-pink   {background:#ff3785;}
-/* title color for light background */
-.widget-color-yellow h3,
-.widget-color-white h3,
-.widget-color-green h3 {color:#333;}
-/* title color for dark background */
-.widget-color-red h3,
-.widget-color-purple h3,
-.widget-color-oliva h3,
-.widget-color-navy h3,
-.widget-color-blue h3,
-.widget-color-pink h3,
-.widget-color-orange h3 {color:#fff;}
 
-/* widget */
-.widget {
-  margin: 10px 5px;
-  padding: 5px;
-  border-radius: 4px;
+/* ========================================
+ * Add Widget Modal
+ * ======================================== */
+
+/* add-widget modal */
+#add-widget {
+    width: 70%;
+    margin-left: -35%;
 }
 
-.widget .widget-title {
-  color: #000;
-  overflow: hidden;
-  height: 32px;
-  line-height: 32px;
-  cursor: move;
+/* modal body */
+#add-widget .modal-body {
+    overflow-y: scroll;
+    max-height: 450px;
 }
 
-.widget .widget-title h3 {
-  padding: 0 5px;
-  float: left;
+/* individual widget-item */
+#add-widget .widget-item {
+    float: left;
+    display: inline-block;
+    padding: 10px;
+    width: 16%;
+    min-width: 130px;
+    height: 200px;
+    margin: 0 0 10px 1%;
+    border: 1px solid #bbb;
+
+    -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.2) inset;
+    -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.2) inset;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.2) inset;
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
 }
 
-.widget .widget-content {
-  background: rgb(255,255,255);
-  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 6%, rgba(243,243,243,1) 17%, rgba(252,252,252,1) 99%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(6%,rgba(237,237,237,1)), color-stop(17%,rgba(243,243,243,1)), color-stop(99%,rgba(252,252,252,1)));
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-  background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 6%,rgba(243,243,243,1) 17%,rgba(252,252,252,1) 99%);
-  padding: 8px 6px 2px;
-  color: #111;
+#add-widget .widget-item:hover {
+    background: #D1D1D1;
 }
 
-.widget-placeholder {
-  border: 2px dashed #999;
+#add-widget .widget-item-img {
+    display: block;
+    overflow: hidden;
+    height: 50%;
+    margin-bottom: 1%;
+}
+
+#add-widget .widget-item > img {
+    max-width: 100%;
+}
+
+#add-widget .widget-item-detail {
+    height: 33%;
+    margin-bottom: 2%;
+    overflow: hidden;
+}
+
+#add-widget .widget-item-detail h3 {
+    font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#add-widget .widget-item-detail p {
+    font-size: 12px;
+    text-overflow: ellipsis;
 }
 
 /* footer */
-footer {
-  margin: 20px auto 10px;
+#footer {
+    margin: 10px auto;
 }
 
-footer h6 {
-  text-align: center;
-  color: #ccc;
+#footer h6 {
+    text-align: center;
+    color: #ccc;
 }
 
 /* ==|== non-semantic helper classes ========================================
@@ -120,16 +253,16 @@ Inlined to avoid required HTTP connection: h5bp.com/r
 ========================================================================== */
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+    * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+    a, a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead { display: table-header-group; } /* h5bp.com/t */
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    p, h2, h3 { orphans: 3; widows: 3; }
+    h2, h3 { page-break-after: avoid; }
 }
